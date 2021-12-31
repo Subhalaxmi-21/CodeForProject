@@ -1,0 +1,19 @@
+class Solution:
+    def checkIfExist(self, arr: List[int]) -> bool:
+#         Logic:
+          # empty hash is created if element in this hash is divisible by element or twice the element return 
+          #true else add it to the hash
+        new=[]
+        for i in arr:
+            
+            if 2*i in new:
+                return True
+            
+            elif i%2==0:
+                if i/2 in new:
+                    return True
+            
+            new.append(i)
+        
+        return False
+            
