@@ -1,0 +1,27 @@
+class Solution:
+    def validMountainArray(self, arr: List[int]) -> bool:
+        
+#         logic: check strictly increasing and decreasing
+        
+        status=-1
+        for i in range(len(arr)-1):
+            if arr[i+1]>arr[i]: 
+                status=0
+                pass
+            elif arr[i+1]==arr[i]:
+                return False
+            else:
+                if status==-1:
+                    return False
+                status=i
+                break
+
+        for i in range(status,len(arr)-1):
+            if arr[i]>arr[i+1]:
+                pass
+
+            else:
+                return False
+        return True
+            
+            
