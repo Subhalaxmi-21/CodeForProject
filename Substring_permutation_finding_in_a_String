@@ -1,0 +1,16 @@
+
+#Logic: s1 string is converted to list and then sorted
+# for longer string select s1 length substring and after sorting compare with s1 ? if matching return true else after loop return false
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s1=list(s1)
+        s1.sort()
+        sm_len=len(s1)
+        s2=list(s2)
+        for i in range(len(s2)-sm_len+1):
+            sub=s2[i:i+sm_len]
+            sub.sort()
+            if sub== s1:
+                return True
+        return False
+        
